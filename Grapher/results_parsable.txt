@@ -1,0 +1,434 @@
+|                            Method | MapSize | MapGenAlgo | DistanceCalc | Heuristic |          Mean |         Error |        StdDev |
+|---------------------------------- |-------- |----------- |------------- |---------- |--------------:|--------------:|--------------:|
+|                   'GoRogue AStar' |      50 |  CELL AUTO |    CHEBYSHEV |   DEFAULT |     946.85 us |     0.8113 us |     0.6774 us |
+|           'GoRogue AStar - H,W,T' |      50 |  CELL AUTO |    CHEBYSHEV |   DEFAULT |     701.28 us |     0.1407 us |     0.1098 us |
+|         'GoRogue AStar - H,W,T,D' |      50 |  CELL AUTO |    CHEBYSHEV |   DEFAULT |     704.22 us |     0.4606 us |     0.3596 us |
+|   'GoRogue AStar - H,W,T,D,Array' |      50 |  CELL AUTO |    CHEBYSHEV |   DEFAULT |     688.71 us |     0.5392 us |     0.4210 us |
+|    'GoRogue AStar - H,W,T,D,Hash' |      50 |  CELL AUTO |    CHEBYSHEV |   DEFAULT |   1,032.10 us |     6.4217 us |     6.0069 us |
+| 'GoRogue AStar - H,W,T,D,HashInt' |      50 |  CELL AUTO |    CHEBYSHEV |   DEFAULT |     852.22 us |     0.2104 us |     0.1643 us |
+|                   'GoRogue AStar' |      50 |  CELL AUTO |    CHEBYSHEV |      FAST |     948.28 us |     0.7173 us |     0.6359 us |
+|           'GoRogue AStar - H,W,T' |      50 |  CELL AUTO |    CHEBYSHEV |      FAST |     533.30 us |     0.2760 us |     0.2305 us |
+|         'GoRogue AStar - H,W,T,D' |      50 |  CELL AUTO |    CHEBYSHEV |      FAST |     531.21 us |     1.0996 us |     0.9748 us |
+|   'GoRogue AStar - H,W,T,D,Array' |      50 |  CELL AUTO |    CHEBYSHEV |      FAST |     516.14 us |     0.1797 us |     0.1403 us |
+|    'GoRogue AStar - H,W,T,D,Hash' |      50 |  CELL AUTO |    CHEBYSHEV |      FAST |     744.61 us |     0.1270 us |     0.0992 us |
+| 'GoRogue AStar - H,W,T,D,HashInt' |      50 |  CELL AUTO |    CHEBYSHEV |      FAST |     634.11 us |     0.8738 us |     0.7297 us |
+|                   'GoRogue AStar' |      50 |  CELL AUTO |    EUCLIDEAN |   DEFAULT |     993.31 us |     3.4345 us |     3.2127 us |
+|           'GoRogue AStar - H,W,T' |      50 |  CELL AUTO |    EUCLIDEAN |   DEFAULT |     816.63 us |     2.3568 us |     2.0893 us |
+|         'GoRogue AStar - H,W,T,D' |      50 |  CELL AUTO |    EUCLIDEAN |   DEFAULT |     817.03 us |     1.0316 us |     0.9145 us |
+|   'GoRogue AStar - H,W,T,D,Array' |      50 |  CELL AUTO |    EUCLIDEAN |   DEFAULT |     805.01 us |     0.4738 us |     0.3699 us |
+|    'GoRogue AStar - H,W,T,D,Hash' |      50 |  CELL AUTO |    EUCLIDEAN |   DEFAULT |   1,204.09 us |     3.0451 us |     2.6994 us |
+| 'GoRogue AStar - H,W,T,D,HashInt' |      50 |  CELL AUTO |    EUCLIDEAN |   DEFAULT |     998.95 us |     0.5921 us |     0.5249 us |
+|                   'GoRogue AStar' |      50 |  CELL AUTO |    EUCLIDEAN |      FAST |     988.67 us |     2.3225 us |     1.9394 us |
+|           'GoRogue AStar - H,W,T' |      50 |  CELL AUTO |    EUCLIDEAN |      FAST |     673.39 us |     4.4283 us |     3.6978 us |
+|         'GoRogue AStar - H,W,T,D' |      50 |  CELL AUTO |    EUCLIDEAN |      FAST |     667.52 us |     0.6669 us |     0.5912 us |
+|   'GoRogue AStar - H,W,T,D,Array' |      50 |  CELL AUTO |    EUCLIDEAN |      FAST |     652.66 us |     0.5385 us |     0.4774 us |
+|    'GoRogue AStar - H,W,T,D,Hash' |      50 |  CELL AUTO |    EUCLIDEAN |      FAST |     963.73 us |     1.3967 us |     1.3065 us |
+| 'GoRogue AStar - H,W,T,D,HashInt' |      50 |  CELL AUTO |    EUCLIDEAN |      FAST |     801.52 us |     0.6461 us |     0.5395 us |
+|                   'GoRogue AStar' |      50 |  CELL AUTO |    MANHATTAN |   DEFAULT |     666.32 us |     0.7145 us |     0.6684 us |
+|           'GoRogue AStar - H,W,T' |      50 |  CELL AUTO |    MANHATTAN |   DEFAULT |     478.59 us |     0.7220 us |     0.6754 us |
+|         'GoRogue AStar - H,W,T,D' |      50 |  CELL AUTO |    MANHATTAN |   DEFAULT |     469.78 us |     0.1559 us |     0.1217 us |
+|   'GoRogue AStar - H,W,T,D,Array' |      50 |  CELL AUTO |    MANHATTAN |   DEFAULT |     458.26 us |     0.5223 us |     0.4630 us |
+|    'GoRogue AStar - H,W,T,D,Hash' |      50 |  CELL AUTO |    MANHATTAN |   DEFAULT |     677.05 us |     0.6164 us |     0.5147 us |
+| 'GoRogue AStar - H,W,T,D,HashInt' |      50 |  CELL AUTO |    MANHATTAN |   DEFAULT |     564.13 us |     0.9694 us |     0.9068 us |
+|                   'GoRogue AStar' |      50 |  CELL AUTO |    MANHATTAN |      FAST |     676.33 us |     1.5749 us |     1.3961 us |
+|           'GoRogue AStar - H,W,T' |      50 |  CELL AUTO |    MANHATTAN |      FAST |     478.67 us |     0.1379 us |     0.1222 us |
+|         'GoRogue AStar - H,W,T,D' |      50 |  CELL AUTO |    MANHATTAN |      FAST |     470.10 us |     0.5563 us |     0.4931 us |
+|   'GoRogue AStar - H,W,T,D,Array' |      50 |  CELL AUTO |    MANHATTAN |      FAST |     460.62 us |     0.7871 us |     0.6977 us |
+|    'GoRogue AStar - H,W,T,D,Hash' |      50 |  CELL AUTO |    MANHATTAN |      FAST |     674.47 us |     0.2201 us |     0.1838 us |
+| 'GoRogue AStar - H,W,T,D,HashInt' |      50 |  CELL AUTO |    MANHATTAN |      FAST |     563.37 us |     0.7558 us |     0.6311 us |
+|                   'GoRogue AStar' |      50 | RAND ROOMS |    CHEBYSHEV |   DEFAULT |     440.81 us |     1.5139 us |     1.2641 us |
+|           'GoRogue AStar - H,W,T' |      50 | RAND ROOMS |    CHEBYSHEV |   DEFAULT |     304.13 us |     1.8418 us |     1.7228 us |
+|         'GoRogue AStar - H,W,T,D' |      50 | RAND ROOMS |    CHEBYSHEV |   DEFAULT |     293.29 us |     1.5030 us |     1.4059 us |
+|   'GoRogue AStar - H,W,T,D,Array' |      50 | RAND ROOMS |    CHEBYSHEV |   DEFAULT |     275.62 us |     0.3298 us |     0.2754 us |
+|    'GoRogue AStar - H,W,T,D,Hash' |      50 | RAND ROOMS |    CHEBYSHEV |   DEFAULT |     363.14 us |     0.3236 us |     0.2869 us |
+| 'GoRogue AStar - H,W,T,D,HashInt' |      50 | RAND ROOMS |    CHEBYSHEV |   DEFAULT |     323.75 us |     0.4095 us |     0.3630 us |
+|                   'GoRogue AStar' |      50 | RAND ROOMS |    CHEBYSHEV |      FAST |     441.87 us |     1.1730 us |     1.0398 us |
+|           'GoRogue AStar - H,W,T' |      50 | RAND ROOMS |    CHEBYSHEV |      FAST |     181.13 us |     0.9636 us |     0.8542 us |
+|         'GoRogue AStar - H,W,T,D' |      50 | RAND ROOMS |    CHEBYSHEV |      FAST |     168.47 us |     0.8145 us |     0.7221 us |
+|   'GoRogue AStar - H,W,T,D,Array' |      50 | RAND ROOMS |    CHEBYSHEV |      FAST |     149.62 us |     0.1679 us |     0.1570 us |
+|    'GoRogue AStar - H,W,T,D,Hash' |      50 | RAND ROOMS |    CHEBYSHEV |      FAST |     191.49 us |     0.1497 us |     0.1327 us |
+| 'GoRogue AStar - H,W,T,D,HashInt' |      50 | RAND ROOMS |    CHEBYSHEV |      FAST |     170.60 us |     0.0977 us |     0.0816 us |
+|                   'GoRogue AStar' |      50 | RAND ROOMS |    EUCLIDEAN |   DEFAULT |     376.12 us |     0.3679 us |     0.3072 us |
+|           'GoRogue AStar - H,W,T' |      50 | RAND ROOMS |    EUCLIDEAN |   DEFAULT |     300.58 us |     0.3931 us |     0.3485 us |
+|         'GoRogue AStar - H,W,T,D' |      50 | RAND ROOMS |    EUCLIDEAN |   DEFAULT |     288.97 us |     0.2528 us |     0.2111 us |
+|   'GoRogue AStar - H,W,T,D,Array' |      50 | RAND ROOMS |    EUCLIDEAN |   DEFAULT |     269.47 us |     0.3261 us |     0.2546 us |
+|    'GoRogue AStar - H,W,T,D,Hash' |      50 | RAND ROOMS |    EUCLIDEAN |   DEFAULT |     360.48 us |     0.4866 us |     0.4313 us |
+| 'GoRogue AStar - H,W,T,D,HashInt' |      50 | RAND ROOMS |    EUCLIDEAN |   DEFAULT |     323.73 us |     1.2001 us |     1.1226 us |
+|                   'GoRogue AStar' |      50 | RAND ROOMS |    EUCLIDEAN |      FAST |     377.75 us |     0.7784 us |     0.7282 us |
+|           'GoRogue AStar - H,W,T' |      50 | RAND ROOMS |    EUCLIDEAN |      FAST |     183.43 us |     0.0819 us |     0.0684 us |
+|         'GoRogue AStar - H,W,T,D' |      50 | RAND ROOMS |    EUCLIDEAN |      FAST |     168.72 us |     0.2374 us |     0.1983 us |
+|   'GoRogue AStar - H,W,T,D,Array' |      50 | RAND ROOMS |    EUCLIDEAN |      FAST |     150.21 us |     0.2083 us |     0.1739 us |
+|    'GoRogue AStar - H,W,T,D,Hash' |      50 | RAND ROOMS |    EUCLIDEAN |      FAST |     191.81 us |     0.1636 us |     0.1451 us |
+| 'GoRogue AStar - H,W,T,D,HashInt' |      50 | RAND ROOMS |    EUCLIDEAN |      FAST |     171.02 us |     0.2475 us |     0.2316 us |
+|                   'GoRogue AStar' |      50 | RAND ROOMS |    MANHATTAN |   DEFAULT |     210.51 us |     0.4042 us |     0.3781 us |
+|           'GoRogue AStar - H,W,T' |      50 | RAND ROOMS |    MANHATTAN |   DEFAULT |     135.60 us |     0.1577 us |     0.1317 us |
+|         'GoRogue AStar - H,W,T,D' |      50 | RAND ROOMS |    MANHATTAN |   DEFAULT |     121.72 us |     0.1458 us |     0.1364 us |
+|   'GoRogue AStar - H,W,T,D,Array' |      50 | RAND ROOMS |    MANHATTAN |   DEFAULT |     104.44 us |     0.1950 us |     0.1824 us |
+|    'GoRogue AStar - H,W,T,D,Hash' |      50 | RAND ROOMS |    MANHATTAN |   DEFAULT |     141.65 us |     0.0786 us |     0.0614 us |
+| 'GoRogue AStar - H,W,T,D,HashInt' |      50 | RAND ROOMS |    MANHATTAN |   DEFAULT |     123.94 us |     0.3610 us |     0.3377 us |
+|                   'GoRogue AStar' |      50 | RAND ROOMS |    MANHATTAN |      FAST |     207.95 us |     0.0947 us |     0.0791 us |
+|           'GoRogue AStar - H,W,T' |      50 | RAND ROOMS |    MANHATTAN |      FAST |     135.82 us |     0.3509 us |     0.3283 us |
+|         'GoRogue AStar - H,W,T,D' |      50 | RAND ROOMS |    MANHATTAN |      FAST |     122.78 us |     0.3793 us |     0.3548 us |
+|   'GoRogue AStar - H,W,T,D,Array' |      50 | RAND ROOMS |    MANHATTAN |      FAST |     103.72 us |     0.0869 us |     0.0726 us |
+|    'GoRogue AStar - H,W,T,D,Hash' |      50 | RAND ROOMS |    MANHATTAN |      FAST |     141.48 us |     0.1387 us |     0.1158 us |
+| 'GoRogue AStar - H,W,T,D,HashInt' |      50 | RAND ROOMS |    MANHATTAN |      FAST |     123.82 us |     0.3747 us |     0.3505 us |
+|                   'GoRogue AStar' |      50 |  RECTANGLE |    CHEBYSHEV |   DEFAULT |     560.47 us |     0.3487 us |     0.2722 us |
+|           'GoRogue AStar - H,W,T' |      50 |  RECTANGLE |    CHEBYSHEV |   DEFAULT |     139.78 us |     0.2142 us |     0.2003 us |
+|         'GoRogue AStar - H,W,T,D' |      50 |  RECTANGLE |    CHEBYSHEV |   DEFAULT |     131.13 us |     0.2668 us |     0.2365 us |
+|   'GoRogue AStar - H,W,T,D,Array' |      50 |  RECTANGLE |    CHEBYSHEV |   DEFAULT |     106.49 us |     0.0436 us |     0.0364 us |
+|    'GoRogue AStar - H,W,T,D,Hash' |      50 |  RECTANGLE |    CHEBYSHEV |   DEFAULT |     144.10 us |     0.1542 us |     0.1367 us |
+| 'GoRogue AStar - H,W,T,D,HashInt' |      50 |  RECTANGLE |    CHEBYSHEV |   DEFAULT |     120.71 us |     0.1317 us |     0.1168 us |
+|                   'GoRogue AStar' |      50 |  RECTANGLE |    CHEBYSHEV |      FAST |     562.30 us |     1.1087 us |     1.0371 us |
+|           'GoRogue AStar - H,W,T' |      50 |  RECTANGLE |    CHEBYSHEV |      FAST |     139.23 us |     0.1410 us |     0.1177 us |
+|         'GoRogue AStar - H,W,T,D' |      50 |  RECTANGLE |    CHEBYSHEV |      FAST |     129.62 us |     0.4434 us |     0.4148 us |
+|   'GoRogue AStar - H,W,T,D,Array' |      50 |  RECTANGLE |    CHEBYSHEV |      FAST |     105.92 us |     0.1226 us |     0.1024 us |
+|    'GoRogue AStar - H,W,T,D,Hash' |      50 |  RECTANGLE |    CHEBYSHEV |      FAST |     141.92 us |     0.1236 us |     0.1032 us |
+| 'GoRogue AStar - H,W,T,D,HashInt' |      50 |  RECTANGLE |    CHEBYSHEV |      FAST |     119.51 us |     0.0934 us |     0.0874 us |
+|                   'GoRogue AStar' |      50 |  RECTANGLE |    EUCLIDEAN |   DEFAULT |     792.09 us |     0.7508 us |     0.6655 us |
+|           'GoRogue AStar - H,W,T' |      50 |  RECTANGLE |    EUCLIDEAN |   DEFAULT |     630.94 us |     0.7619 us |     0.6362 us |
+|         'GoRogue AStar - H,W,T,D' |      50 |  RECTANGLE |    EUCLIDEAN |   DEFAULT |     633.43 us |     0.3755 us |     0.3512 us |
+|   'GoRogue AStar - H,W,T,D,Array' |      50 |  RECTANGLE |    EUCLIDEAN |   DEFAULT |     607.52 us |     1.1407 us |     0.9525 us |
+|    'GoRogue AStar - H,W,T,D,Hash' |      50 |  RECTANGLE |    EUCLIDEAN |   DEFAULT |     954.99 us |     0.3651 us |     0.3049 us |
+| 'GoRogue AStar - H,W,T,D,HashInt' |      50 |  RECTANGLE |    EUCLIDEAN |   DEFAULT |     772.59 us |     0.4981 us |     0.4160 us |
+|                   'GoRogue AStar' |      50 |  RECTANGLE |    EUCLIDEAN |      FAST |     782.75 us |     0.5556 us |     0.4639 us |
+|           'GoRogue AStar - H,W,T' |      50 |  RECTANGLE |    EUCLIDEAN |      FAST |     138.75 us |     0.2370 us |     0.2101 us |
+|         'GoRogue AStar - H,W,T,D' |      50 |  RECTANGLE |    EUCLIDEAN |      FAST |     127.04 us |     0.2305 us |     0.2043 us |
+|   'GoRogue AStar - H,W,T,D,Array' |      50 |  RECTANGLE |    EUCLIDEAN |      FAST |     101.92 us |     0.1029 us |     0.0859 us |
+|    'GoRogue AStar - H,W,T,D,Hash' |      50 |  RECTANGLE |    EUCLIDEAN |      FAST |     135.94 us |     0.2412 us |     0.2256 us |
+| 'GoRogue AStar - H,W,T,D,HashInt' |      50 |  RECTANGLE |    EUCLIDEAN |      FAST |     114.90 us |     0.0768 us |     0.0641 us |
+|                   'GoRogue AStar' |      50 |  RECTANGLE |    MANHATTAN |   DEFAULT |     311.40 us |     0.4015 us |     0.3559 us |
+|           'GoRogue AStar - H,W,T' |      50 |  RECTANGLE |    MANHATTAN |   DEFAULT |     118.98 us |     0.0596 us |     0.0497 us |
+|         'GoRogue AStar - H,W,T,D' |      50 |  RECTANGLE |    MANHATTAN |   DEFAULT |     111.84 us |     0.1429 us |     0.1266 us |
+|   'GoRogue AStar - H,W,T,D,Array' |      50 |  RECTANGLE |    MANHATTAN |   DEFAULT |      87.81 us |     0.1502 us |     0.1405 us |
+|    'GoRogue AStar - H,W,T,D,Hash' |      50 |  RECTANGLE |    MANHATTAN |   DEFAULT |     118.85 us |     0.1445 us |     0.1352 us |
+| 'GoRogue AStar - H,W,T,D,HashInt' |      50 |  RECTANGLE |    MANHATTAN |   DEFAULT |     100.11 us |     0.0596 us |     0.0497 us |
+|                   'GoRogue AStar' |      50 |  RECTANGLE |    MANHATTAN |      FAST |     310.49 us |     0.2557 us |     0.2135 us |
+|           'GoRogue AStar - H,W,T' |      50 |  RECTANGLE |    MANHATTAN |      FAST |     120.93 us |     0.1884 us |     0.1762 us |
+|         'GoRogue AStar - H,W,T,D' |      50 |  RECTANGLE |    MANHATTAN |      FAST |     113.84 us |     0.2420 us |     0.2146 us |
+|   'GoRogue AStar - H,W,T,D,Array' |      50 |  RECTANGLE |    MANHATTAN |      FAST |      86.45 us |     0.2032 us |     0.1901 us |
+|    'GoRogue AStar - H,W,T,D,Hash' |      50 |  RECTANGLE |    MANHATTAN |      FAST |     119.09 us |     0.0735 us |     0.0614 us |
+| 'GoRogue AStar - H,W,T,D,HashInt' |      50 |  RECTANGLE |    MANHATTAN |      FAST |      99.92 us |     0.0583 us |     0.0487 us |
+|                   'GoRogue AStar' |     100 |  CELL AUTO |    CHEBYSHEV |   DEFAULT |   5,362.34 us |     8.5403 us |     7.5708 us |
+|           'GoRogue AStar - H,W,T' |     100 |  CELL AUTO |    CHEBYSHEV |   DEFAULT |   4,044.54 us |    29.7123 us |    27.7929 us |
+|         'GoRogue AStar - H,W,T,D' |     100 |  CELL AUTO |    CHEBYSHEV |   DEFAULT |   4,048.40 us |    29.8025 us |    27.8773 us |
+|   'GoRogue AStar - H,W,T,D,Array' |     100 |  CELL AUTO |    CHEBYSHEV |   DEFAULT |   3,953.37 us |    16.9884 us |    15.8910 us |
+|    'GoRogue AStar - H,W,T,D,Hash' |     100 |  CELL AUTO |    CHEBYSHEV |   DEFAULT |   6,041.52 us |     1.2706 us |     0.9920 us |
+| 'GoRogue AStar - H,W,T,D,HashInt' |     100 |  CELL AUTO |    CHEBYSHEV |   DEFAULT |   5,018.33 us |    29.8186 us |    27.8923 us |
+|                   'GoRogue AStar' |     100 |  CELL AUTO |    CHEBYSHEV |      FAST |   5,381.72 us |    10.9909 us |    10.2809 us |
+|           'GoRogue AStar - H,W,T' |     100 |  CELL AUTO |    CHEBYSHEV |      FAST |   2,606.88 us |     6.0595 us |     5.0600 us |
+|         'GoRogue AStar - H,W,T,D' |     100 |  CELL AUTO |    CHEBYSHEV |      FAST |   2,585.48 us |     3.1151 us |     2.9139 us |
+|   'GoRogue AStar - H,W,T,D,Array' |     100 |  CELL AUTO |    CHEBYSHEV |      FAST |   2,501.71 us |    12.2365 us |    11.4461 us |
+|    'GoRogue AStar - H,W,T,D,Hash' |     100 |  CELL AUTO |    CHEBYSHEV |      FAST |   3,813.96 us |    22.9701 us |    21.4863 us |
+| 'GoRogue AStar - H,W,T,D,HashInt' |     100 |  CELL AUTO |    CHEBYSHEV |      FAST |   3,121.99 us |     1.7031 us |     1.4221 us |
+|                   'GoRogue AStar' |     100 |  CELL AUTO |    EUCLIDEAN |   DEFAULT |   5,648.08 us |    17.3747 us |    14.5086 us |
+|           'GoRogue AStar - H,W,T' |     100 |  CELL AUTO |    EUCLIDEAN |   DEFAULT |   4,778.78 us |    38.8048 us |    34.3995 us |
+|         'GoRogue AStar - H,W,T,D' |     100 |  CELL AUTO |    EUCLIDEAN |   DEFAULT |   4,870.02 us |    42.3725 us |    39.6353 us |
+|   'GoRogue AStar - H,W,T,D,Array' |     100 |  CELL AUTO |    EUCLIDEAN |   DEFAULT |   4,761.07 us |     4.8132 us |     4.0192 us |
+|    'GoRogue AStar - H,W,T,D,Hash' |     100 |  CELL AUTO |    EUCLIDEAN |   DEFAULT |   7,113.44 us |     0.7361 us |     0.6147 us |
+| 'GoRogue AStar - H,W,T,D,HashInt' |     100 |  CELL AUTO |    EUCLIDEAN |   DEFAULT |   5,871.01 us |    37.7724 us |    35.3323 us |
+|                   'GoRogue AStar' |     100 |  CELL AUTO |    EUCLIDEAN |      FAST |   5,664.89 us |    14.6305 us |    12.9696 us |
+|           'GoRogue AStar - H,W,T' |     100 |  CELL AUTO |    EUCLIDEAN |      FAST |   3,146.53 us |     8.2848 us |     6.9182 us |
+|         'GoRogue AStar - H,W,T,D' |     100 |  CELL AUTO |    EUCLIDEAN |      FAST |   3,181.70 us |    14.7906 us |    12.3508 us |
+|   'GoRogue AStar - H,W,T,D,Array' |     100 |  CELL AUTO |    EUCLIDEAN |      FAST |   3,056.12 us |     5.9734 us |     5.5876 us |
+|    'GoRogue AStar - H,W,T,D,Hash' |     100 |  CELL AUTO |    EUCLIDEAN |      FAST |   4,647.91 us |     1.8208 us |     1.5205 us |
+| 'GoRogue AStar - H,W,T,D,HashInt' |     100 |  CELL AUTO |    EUCLIDEAN |      FAST |   3,887.00 us |    10.7821 us |     9.5581 us |
+|                   'GoRogue AStar' |     100 |  CELL AUTO |    MANHATTAN |   DEFAULT |   3,205.41 us |     3.5052 us |     3.1072 us |
+|           'GoRogue AStar - H,W,T' |     100 |  CELL AUTO |    MANHATTAN |   DEFAULT |   2,411.35 us |    11.3374 us |    10.6050 us |
+|         'GoRogue AStar - H,W,T,D' |     100 |  CELL AUTO |    MANHATTAN |   DEFAULT |   2,397.68 us |     6.5959 us |     6.1698 us |
+|   'GoRogue AStar - H,W,T,D,Array' |     100 |  CELL AUTO |    MANHATTAN |   DEFAULT |   2,326.73 us |    13.5113 us |    11.9774 us |
+|    'GoRogue AStar - H,W,T,D,Hash' |     100 |  CELL AUTO |    MANHATTAN |   DEFAULT |   3,440.03 us |     1.2063 us |     0.9418 us |
+| 'GoRogue AStar - H,W,T,D,HashInt' |     100 |  CELL AUTO |    MANHATTAN |   DEFAULT |   2,846.27 us |     2.6621 us |     2.4901 us |
+|                   'GoRogue AStar' |     100 |  CELL AUTO |    MANHATTAN |      FAST |   3,205.71 us |     2.7431 us |     2.5659 us |
+|           'GoRogue AStar - H,W,T' |     100 |  CELL AUTO |    MANHATTAN |      FAST |   2,428.22 us |    11.7008 us |    10.9449 us |
+|         'GoRogue AStar - H,W,T,D' |     100 |  CELL AUTO |    MANHATTAN |      FAST |   2,397.29 us |    13.7361 us |    12.8488 us |
+|   'GoRogue AStar - H,W,T,D,Array' |     100 |  CELL AUTO |    MANHATTAN |      FAST |   2,354.54 us |    21.8630 us |    20.4506 us |
+|    'GoRogue AStar - H,W,T,D,Hash' |     100 |  CELL AUTO |    MANHATTAN |      FAST |   3,462.39 us |     0.8287 us |     0.7347 us |
+| 'GoRogue AStar - H,W,T,D,HashInt' |     100 |  CELL AUTO |    MANHATTAN |      FAST |   2,819.86 us |     0.9592 us |     0.7489 us |
+|                   'GoRogue AStar' |     100 | RAND ROOMS |    CHEBYSHEV |   DEFAULT |   1,012.90 us |     0.9025 us |     0.7536 us |
+|           'GoRogue AStar - H,W,T' |     100 | RAND ROOMS |    CHEBYSHEV |   DEFAULT |     796.00 us |     0.8072 us |     0.7155 us |
+|         'GoRogue AStar - H,W,T,D' |     100 | RAND ROOMS |    CHEBYSHEV |   DEFAULT |     706.83 us |     1.7080 us |     1.5977 us |
+|   'GoRogue AStar - H,W,T,D,Array' |     100 | RAND ROOMS |    CHEBYSHEV |   DEFAULT |     634.97 us |     0.5721 us |     0.5072 us |
+|    'GoRogue AStar - H,W,T,D,Hash' |     100 | RAND ROOMS |    CHEBYSHEV |   DEFAULT |     820.95 us |     0.6364 us |     0.5642 us |
+| 'GoRogue AStar - H,W,T,D,HashInt' |     100 | RAND ROOMS |    CHEBYSHEV |   DEFAULT |     727.68 us |     2.2354 us |     1.9816 us |
+|                   'GoRogue AStar' |     100 | RAND ROOMS |    CHEBYSHEV |      FAST |   1,011.11 us |     1.7945 us |     1.4985 us |
+|           'GoRogue AStar - H,W,T' |     100 | RAND ROOMS |    CHEBYSHEV |      FAST |     624.38 us |     0.3334 us |     0.2603 us |
+|         'GoRogue AStar - H,W,T,D' |     100 | RAND ROOMS |    CHEBYSHEV |      FAST |     533.45 us |     0.5763 us |     0.4812 us |
+|   'GoRogue AStar - H,W,T,D,Array' |     100 | RAND ROOMS |    CHEBYSHEV |      FAST |     458.24 us |     0.8775 us |     0.8208 us |
+|    'GoRogue AStar - H,W,T,D,Hash' |     100 | RAND ROOMS |    CHEBYSHEV |      FAST |     588.15 us |     0.2242 us |     0.1750 us |
+| 'GoRogue AStar - H,W,T,D,HashInt' |     100 | RAND ROOMS |    CHEBYSHEV |      FAST |     520.41 us |     2.8636 us |     2.6786 us |
+|                   'GoRogue AStar' |     100 | RAND ROOMS |    EUCLIDEAN |   DEFAULT |     957.79 us |     2.4110 us |     2.2552 us |
+|           'GoRogue AStar - H,W,T' |     100 | RAND ROOMS |    EUCLIDEAN |   DEFAULT |     778.55 us |     0.2527 us |     0.1973 us |
+|         'GoRogue AStar - H,W,T,D' |     100 | RAND ROOMS |    EUCLIDEAN |   DEFAULT |     689.91 us |     1.2547 us |     1.0477 us |
+|   'GoRogue AStar - H,W,T,D,Array' |     100 | RAND ROOMS |    EUCLIDEAN |   DEFAULT |     614.53 us |     1.7506 us |     1.6375 us |
+|    'GoRogue AStar - H,W,T,D,Hash' |     100 | RAND ROOMS |    EUCLIDEAN |   DEFAULT |     790.88 us |     0.8127 us |     0.6786 us |
+| 'GoRogue AStar - H,W,T,D,HashInt' |     100 | RAND ROOMS |    EUCLIDEAN |   DEFAULT |     712.19 us |     0.5698 us |     0.4758 us |
+|                   'GoRogue AStar' |     100 | RAND ROOMS |    EUCLIDEAN |      FAST |     943.43 us |     1.4721 us |     1.3050 us |
+|           'GoRogue AStar - H,W,T' |     100 | RAND ROOMS |    EUCLIDEAN |      FAST |     639.08 us |     3.1238 us |     2.9220 us |
+|         'GoRogue AStar - H,W,T,D' |     100 | RAND ROOMS |    EUCLIDEAN |      FAST |     546.43 us |     0.6716 us |     0.5243 us |
+|   'GoRogue AStar - H,W,T,D,Array' |     100 | RAND ROOMS |    EUCLIDEAN |      FAST |     465.93 us |     1.2433 us |     1.1021 us |
+|    'GoRogue AStar - H,W,T,D,Hash' |     100 | RAND ROOMS |    EUCLIDEAN |      FAST |     602.00 us |     1.6591 us |     1.3854 us |
+| 'GoRogue AStar - H,W,T,D,HashInt' |     100 | RAND ROOMS |    EUCLIDEAN |      FAST |     533.08 us |     0.6184 us |     0.5164 us |
+|                   'GoRogue AStar' |     100 | RAND ROOMS |    MANHATTAN |   DEFAULT |     582.42 us |     0.9183 us |     0.8140 us |
+|           'GoRogue AStar - H,W,T' |     100 | RAND ROOMS |    MANHATTAN |   DEFAULT |     467.71 us |     2.4855 us |     2.3249 us |
+|         'GoRogue AStar - H,W,T,D' |     100 | RAND ROOMS |    MANHATTAN |   DEFAULT |     377.65 us |     0.5465 us |     0.4563 us |
+|   'GoRogue AStar - H,W,T,D,Array' |     100 | RAND ROOMS |    MANHATTAN |   DEFAULT |     298.52 us |     0.3562 us |     0.2975 us |
+|    'GoRogue AStar - H,W,T,D,Hash' |     100 | RAND ROOMS |    MANHATTAN |   DEFAULT |     406.47 us |     0.2507 us |     0.2093 us |
+| 'GoRogue AStar - H,W,T,D,HashInt' |     100 | RAND ROOMS |    MANHATTAN |   DEFAULT |     352.28 us |     1.1285 us |     1.0004 us |
+|                   'GoRogue AStar' |     100 | RAND ROOMS |    MANHATTAN |      FAST |     587.62 us |     0.2038 us |     0.1591 us |
+|           'GoRogue AStar - H,W,T' |     100 | RAND ROOMS |    MANHATTAN |      FAST |     464.97 us |     0.9429 us |     0.8820 us |
+|         'GoRogue AStar - H,W,T,D' |     100 | RAND ROOMS |    MANHATTAN |      FAST |     376.55 us |     0.8407 us |     0.7864 us |
+|   'GoRogue AStar - H,W,T,D,Array' |     100 | RAND ROOMS |    MANHATTAN |      FAST |     300.59 us |     0.1481 us |     0.1157 us |
+|    'GoRogue AStar - H,W,T,D,Hash' |     100 | RAND ROOMS |    MANHATTAN |      FAST |     406.18 us |     0.4606 us |     0.4308 us |
+| 'GoRogue AStar - H,W,T,D,HashInt' |     100 | RAND ROOMS |    MANHATTAN |      FAST |     351.01 us |     0.2425 us |     0.1893 us |
+|                   'GoRogue AStar' |     100 |  RECTANGLE |    CHEBYSHEV |   DEFAULT |   1,467.44 us |     2.9041 us |     2.7165 us |
+|           'GoRogue AStar - H,W,T' |     100 |  RECTANGLE |    CHEBYSHEV |   DEFAULT |     394.50 us |     1.8179 us |     1.7005 us |
+|         'GoRogue AStar - H,W,T,D' |     100 |  RECTANGLE |    CHEBYSHEV |   DEFAULT |     308.70 us |     0.5534 us |     0.4621 us |
+|   'GoRogue AStar - H,W,T,D,Array' |     100 |  RECTANGLE |    CHEBYSHEV |   DEFAULT |     221.60 us |     0.0599 us |     0.0531 us |
+|    'GoRogue AStar - H,W,T,D,Hash' |     100 |  RECTANGLE |    CHEBYSHEV |   DEFAULT |     301.90 us |     0.1101 us |     0.0919 us |
+| 'GoRogue AStar - H,W,T,D,HashInt' |     100 |  RECTANGLE |    CHEBYSHEV |   DEFAULT |     246.15 us |     0.6768 us |     0.6000 us |
+|                   'GoRogue AStar' |     100 |  RECTANGLE |    CHEBYSHEV |      FAST |   1,465.45 us |     0.5667 us |     0.5024 us |
+|           'GoRogue AStar - H,W,T' |     100 |  RECTANGLE |    CHEBYSHEV |      FAST |     393.10 us |     1.8065 us |     1.6898 us |
+|         'GoRogue AStar - H,W,T,D' |     100 |  RECTANGLE |    CHEBYSHEV |      FAST |     305.86 us |     0.4279 us |     0.3573 us |
+|   'GoRogue AStar - H,W,T,D,Array' |     100 |  RECTANGLE |    CHEBYSHEV |      FAST |     218.85 us |     0.0865 us |     0.0722 us |
+|    'GoRogue AStar - H,W,T,D,Hash' |     100 |  RECTANGLE |    CHEBYSHEV |      FAST |     297.35 us |     0.1909 us |     0.1594 us |
+| 'GoRogue AStar - H,W,T,D,HashInt' |     100 |  RECTANGLE |    CHEBYSHEV |      FAST |     248.40 us |     0.0847 us |     0.0661 us |
+|                   'GoRogue AStar' |     100 |  RECTANGLE |    EUCLIDEAN |   DEFAULT |   3,155.20 us |     3.3898 us |     2.8307 us |
+|           'GoRogue AStar - H,W,T' |     100 |  RECTANGLE |    EUCLIDEAN |   DEFAULT |   2,625.50 us |    18.7176 us |    17.5085 us |
+|         'GoRogue AStar - H,W,T,D' |     100 |  RECTANGLE |    EUCLIDEAN |   DEFAULT |   2,613.24 us |     7.3906 us |     6.5515 us |
+|   'GoRogue AStar - H,W,T,D,Array' |     100 |  RECTANGLE |    EUCLIDEAN |   DEFAULT |   2,481.94 us |     2.5499 us |     1.9908 us |
+|    'GoRogue AStar - H,W,T,D,Hash' |     100 |  RECTANGLE |    EUCLIDEAN |   DEFAULT |   3,938.43 us |     1.1543 us |     0.9012 us |
+| 'GoRogue AStar - H,W,T,D,HashInt' |     100 |  RECTANGLE |    EUCLIDEAN |   DEFAULT |   3,194.20 us |     7.8742 us |     6.9803 us |
+|                   'GoRogue AStar' |     100 |  RECTANGLE |    EUCLIDEAN |      FAST |   3,158.81 us |     6.1134 us |     5.4194 us |
+|           'GoRogue AStar - H,W,T' |     100 |  RECTANGLE |    EUCLIDEAN |      FAST |     394.19 us |     2.0469 us |     1.9147 us |
+|         'GoRogue AStar - H,W,T,D' |     100 |  RECTANGLE |    EUCLIDEAN |      FAST |     300.83 us |     0.6724 us |     0.6289 us |
+|   'GoRogue AStar - H,W,T,D,Array' |     100 |  RECTANGLE |    EUCLIDEAN |      FAST |     214.35 us |     0.1223 us |     0.0954 us |
+|    'GoRogue AStar - H,W,T,D,Hash' |     100 |  RECTANGLE |    EUCLIDEAN |      FAST |     287.90 us |     0.8471 us |     0.7924 us |
+| 'GoRogue AStar - H,W,T,D,HashInt' |     100 |  RECTANGLE |    EUCLIDEAN |      FAST |     235.65 us |     0.1269 us |     0.1060 us |
+|                   'GoRogue AStar' |     100 |  RECTANGLE |    MANHATTAN |   DEFAULT |   1,028.07 us |     0.5581 us |     0.4947 us |
+|           'GoRogue AStar - H,W,T' |     100 |  RECTANGLE |    MANHATTAN |   DEFAULT |     355.31 us |     0.4119 us |     0.3853 us |
+|         'GoRogue AStar - H,W,T,D' |     100 |  RECTANGLE |    MANHATTAN |   DEFAULT |     266.65 us |     0.6635 us |     0.5882 us |
+|   'GoRogue AStar - H,W,T,D,Array' |     100 |  RECTANGLE |    MANHATTAN |   DEFAULT |     184.92 us |     0.2204 us |     0.2061 us |
+|    'GoRogue AStar - H,W,T,D,Hash' |     100 |  RECTANGLE |    MANHATTAN |   DEFAULT |     242.65 us |     0.5621 us |     0.4983 us |
+| 'GoRogue AStar - H,W,T,D,HashInt' |     100 |  RECTANGLE |    MANHATTAN |   DEFAULT |     200.67 us |     0.2354 us |     0.2202 us |
+|                   'GoRogue AStar' |     100 |  RECTANGLE |    MANHATTAN |      FAST |   1,024.82 us |     3.4742 us |     2.9011 us |
+|           'GoRogue AStar - H,W,T' |     100 |  RECTANGLE |    MANHATTAN |      FAST |     357.89 us |     1.0413 us |     0.9231 us |
+|         'GoRogue AStar - H,W,T,D' |     100 |  RECTANGLE |    MANHATTAN |      FAST |     266.65 us |     0.3764 us |     0.3337 us |
+|   'GoRogue AStar - H,W,T,D,Array' |     100 |  RECTANGLE |    MANHATTAN |      FAST |     184.14 us |     0.4124 us |     0.3858 us |
+|    'GoRogue AStar - H,W,T,D,Hash' |     100 |  RECTANGLE |    MANHATTAN |      FAST |     243.69 us |     0.6715 us |     0.6282 us |
+| 'GoRogue AStar - H,W,T,D,HashInt' |     100 |  RECTANGLE |    MANHATTAN |      FAST |     202.14 us |     0.3641 us |     0.3406 us |
+|                   'GoRogue AStar' |     250 |  CELL AUTO |    CHEBYSHEV |   DEFAULT |  45,758.13 us |   139.5519 us |   123.7091 us |
+|           'GoRogue AStar - H,W,T' |     250 |  CELL AUTO |    CHEBYSHEV |   DEFAULT |  37,804.36 us |    97.1181 us |    86.0927 us |
+|         'GoRogue AStar - H,W,T,D' |     250 |  CELL AUTO |    CHEBYSHEV |   DEFAULT |  38,172.13 us |   306.7547 us |   286.9386 us |
+|   'GoRogue AStar - H,W,T,D,Array' |     250 |  CELL AUTO |    CHEBYSHEV |   DEFAULT |  38,035.84 us |   422.4253 us |   395.1369 us |
+|    'GoRogue AStar - H,W,T,D,Hash' |     250 |  CELL AUTO |    CHEBYSHEV |   DEFAULT |  59,665.58 us |   259.0642 us |   242.3288 us |
+| 'GoRogue AStar - H,W,T,D,HashInt' |     250 |  CELL AUTO |    CHEBYSHEV |   DEFAULT |  46,622.85 us |    38.2987 us |    31.9812 us |
+|                   'GoRogue AStar' |     250 |  CELL AUTO |    CHEBYSHEV |      FAST |  46,061.95 us |   114.6757 us |   107.2677 us |
+|           'GoRogue AStar - H,W,T' |     250 |  CELL AUTO |    CHEBYSHEV |      FAST |  26,396.95 us |    15.7735 us |    13.9828 us |
+|         'GoRogue AStar - H,W,T,D' |     250 |  CELL AUTO |    CHEBYSHEV |      FAST |  26,449.74 us |   153.0736 us |   135.6957 us |
+|   'GoRogue AStar - H,W,T,D,Array' |     250 |  CELL AUTO |    CHEBYSHEV |      FAST |  26,030.14 us |   165.1472 us |   154.4788 us |
+|    'GoRogue AStar - H,W,T,D,Hash' |     250 |  CELL AUTO |    CHEBYSHEV |      FAST |  40,078.64 us |    83.2903 us |    77.9098 us |
+| 'GoRogue AStar - H,W,T,D,HashInt' |     250 |  CELL AUTO |    CHEBYSHEV |      FAST |  32,425.26 us |    24.0338 us |    22.4813 us |
+|                   'GoRogue AStar' |     250 |  CELL AUTO |    EUCLIDEAN |   DEFAULT |  50,696.98 us |   208.1379 us |   194.6923 us |
+|           'GoRogue AStar - H,W,T' |     250 |  CELL AUTO |    EUCLIDEAN |   DEFAULT |  42,949.58 us |   143.0519 us |   126.8118 us |
+|         'GoRogue AStar - H,W,T,D' |     250 |  CELL AUTO |    EUCLIDEAN |   DEFAULT |  42,923.29 us |    38.6081 us |    32.2395 us |
+|   'GoRogue AStar - H,W,T,D,Array' |     250 |  CELL AUTO |    EUCLIDEAN |   DEFAULT |  42,370.90 us |    80.4070 us |    75.2128 us |
+|    'GoRogue AStar - H,W,T,D,Hash' |     250 |  CELL AUTO |    EUCLIDEAN |   DEFAULT |  67,491.59 us |    79.2702 us |    74.1494 us |
+| 'GoRogue AStar - H,W,T,D,HashInt' |     250 |  CELL AUTO |    EUCLIDEAN |   DEFAULT |  52,713.33 us |    55.7906 us |    46.5877 us |
+|                   'GoRogue AStar' |     250 |  CELL AUTO |    EUCLIDEAN |      FAST |  50,467.42 us |   120.1182 us |   100.3041 us |
+|           'GoRogue AStar - H,W,T' |     250 |  CELL AUTO |    EUCLIDEAN |      FAST |  31,707.40 us |   377.1256 us |   352.7636 us |
+|         'GoRogue AStar - H,W,T,D' |     250 |  CELL AUTO |    EUCLIDEAN |      FAST |  31,068.69 us |   102.9039 us |    96.2563 us |
+|   'GoRogue AStar - H,W,T,D,Array' |     250 |  CELL AUTO |    EUCLIDEAN |      FAST |  30,563.07 us |    44.0671 us |    36.7980 us |
+|    'GoRogue AStar - H,W,T,D,Hash' |     250 |  CELL AUTO |    EUCLIDEAN |      FAST |  47,505.08 us |    49.7984 us |    46.5815 us |
+| 'GoRogue AStar - H,W,T,D,HashInt' |     250 |  CELL AUTO |    EUCLIDEAN |      FAST |  38,048.20 us |    39.9979 us |    33.4000 us |
+|                   'GoRogue AStar' |     250 |  CELL AUTO |    MANHATTAN |   DEFAULT |  29,202.56 us |    47.7732 us |    42.3497 us |
+|           'GoRogue AStar - H,W,T' |     250 |  CELL AUTO |    MANHATTAN |   DEFAULT |  24,820.52 us |   202.8010 us |   189.7002 us |
+|         'GoRogue AStar - H,W,T,D' |     250 |  CELL AUTO |    MANHATTAN |   DEFAULT |  24,017.45 us |    98.9645 us |    92.5715 us |
+|   'GoRogue AStar - H,W,T,D,Array' |     250 |  CELL AUTO |    MANHATTAN |   DEFAULT |  23,475.36 us |    13.5912 us |    11.3493 us |
+|    'GoRogue AStar - H,W,T,D,Hash' |     250 |  CELL AUTO |    MANHATTAN |   DEFAULT |  36,010.04 us |    98.7912 us |    87.5759 us |
+| 'GoRogue AStar - H,W,T,D,HashInt' |     250 |  CELL AUTO |    MANHATTAN |   DEFAULT |  28,984.33 us |    95.2516 us |    89.0984 us |
+|                   'GoRogue AStar' |     250 |  CELL AUTO |    MANHATTAN |      FAST |  29,441.53 us |    16.1380 us |    15.0955 us |
+|           'GoRogue AStar - H,W,T' |     250 |  CELL AUTO |    MANHATTAN |      FAST |  24,279.79 us |   141.6485 us |   132.4981 us |
+|         'GoRogue AStar - H,W,T,D' |     250 |  CELL AUTO |    MANHATTAN |      FAST |  23,903.79 us |   125.9888 us |   117.8500 us |
+|   'GoRogue AStar - H,W,T,D,Array' |     250 |  CELL AUTO |    MANHATTAN |      FAST |  23,347.40 us |    87.3281 us |    81.6868 us |
+|    'GoRogue AStar - H,W,T,D,Hash' |     250 |  CELL AUTO |    MANHATTAN |      FAST |  36,252.21 us |    57.2846 us |    53.5841 us |
+| 'GoRogue AStar - H,W,T,D,HashInt' |     250 |  CELL AUTO |    MANHATTAN |      FAST |  28,689.96 us |    75.9462 us |    67.3243 us |
+|                   'GoRogue AStar' |     250 | RAND ROOMS |    CHEBYSHEV |   DEFAULT |   3,553.41 us |    15.9632 us |    14.9320 us |
+|           'GoRogue AStar - H,W,T' |     250 | RAND ROOMS |    CHEBYSHEV |   DEFAULT |   2,940.26 us |     2.3348 us |     1.8228 us |
+|         'GoRogue AStar - H,W,T,D' |     250 | RAND ROOMS |    CHEBYSHEV |   DEFAULT |   2,380.92 us |     4.6909 us |     4.1583 us |
+|   'GoRogue AStar - H,W,T,D,Array' |     250 | RAND ROOMS |    CHEBYSHEV |   DEFAULT |   1,927.75 us |     1.7335 us |     1.5367 us |
+|    'GoRogue AStar - H,W,T,D,Hash' |     250 | RAND ROOMS |    CHEBYSHEV |   DEFAULT |   2,460.37 us |     1.8176 us |     1.4191 us |
+| 'GoRogue AStar - H,W,T,D,HashInt' |     250 | RAND ROOMS |    CHEBYSHEV |   DEFAULT |   2,143.35 us |     4.4443 us |     3.7112 us |
+|                   'GoRogue AStar' |     250 | RAND ROOMS |    CHEBYSHEV |      FAST |   3,560.15 us |     4.9552 us |     4.1378 us |
+|           'GoRogue AStar - H,W,T' |     250 | RAND ROOMS |    CHEBYSHEV |      FAST |   1,681.49 us |     4.6359 us |     3.8712 us |
+|         'GoRogue AStar - H,W,T,D' |     250 | RAND ROOMS |    CHEBYSHEV |      FAST |   1,096.93 us |     0.3247 us |     0.2712 us |
+|   'GoRogue AStar - H,W,T,D,Array' |     250 | RAND ROOMS |    CHEBYSHEV |      FAST |     645.70 us |     0.3871 us |     0.3432 us |
+|    'GoRogue AStar - H,W,T,D,Hash' |     250 | RAND ROOMS |    CHEBYSHEV |      FAST |     704.21 us |     1.8140 us |     1.6968 us |
+| 'GoRogue AStar - H,W,T,D,HashInt' |     250 | RAND ROOMS |    CHEBYSHEV |      FAST |     624.67 us |     0.3201 us |     0.2673 us |
+|                   'GoRogue AStar' |     250 | RAND ROOMS |    EUCLIDEAN |   DEFAULT |   3,288.23 us |     2.2076 us |     1.8434 us |
+|           'GoRogue AStar - H,W,T' |     250 | RAND ROOMS |    EUCLIDEAN |   DEFAULT |   2,770.64 us |     7.6716 us |     6.8007 us |
+|         'GoRogue AStar - H,W,T,D' |     250 | RAND ROOMS |    EUCLIDEAN |   DEFAULT |   2,214.82 us |     1.4195 us |     1.1083 us |
+|   'GoRogue AStar - H,W,T,D,Array' |     250 | RAND ROOMS |    EUCLIDEAN |   DEFAULT |   1,754.91 us |     0.5158 us |     0.4573 us |
+|    'GoRogue AStar - H,W,T,D,Hash' |     250 | RAND ROOMS |    EUCLIDEAN |   DEFAULT |   2,181.87 us |     1.5066 us |     1.2581 us |
+| 'GoRogue AStar - H,W,T,D,HashInt' |     250 | RAND ROOMS |    EUCLIDEAN |   DEFAULT |   1,942.76 us |     3.0727 us |     2.5659 us |
+|                   'GoRogue AStar' |     250 | RAND ROOMS |    EUCLIDEAN |      FAST |   3,263.70 us |     1.9504 us |     1.6287 us |
+|           'GoRogue AStar - H,W,T' |     250 | RAND ROOMS |    EUCLIDEAN |      FAST |   1,719.38 us |     0.5645 us |     0.4407 us |
+|         'GoRogue AStar - H,W,T,D' |     250 | RAND ROOMS |    EUCLIDEAN |      FAST |   1,126.27 us |     0.3473 us |     0.2712 us |
+|   'GoRogue AStar - H,W,T,D,Array' |     250 | RAND ROOMS |    EUCLIDEAN |      FAST |     662.90 us |     0.2617 us |     0.2185 us |
+|    'GoRogue AStar - H,W,T,D,Hash' |     250 | RAND ROOMS |    EUCLIDEAN |      FAST |     731.13 us |     0.7182 us |     0.5997 us |
+| 'GoRogue AStar - H,W,T,D,HashInt' |     250 | RAND ROOMS |    EUCLIDEAN |      FAST |     644.55 us |     0.5201 us |     0.4343 us |
+|                   'GoRogue AStar' |     250 | RAND ROOMS |    MANHATTAN |   DEFAULT |   1,835.89 us |     4.5072 us |     3.9955 us |
+|           'GoRogue AStar - H,W,T' |     250 | RAND ROOMS |    MANHATTAN |   DEFAULT |   1,510.02 us |     2.9776 us |     2.4865 us |
+|         'GoRogue AStar - H,W,T,D' |     250 | RAND ROOMS |    MANHATTAN |   DEFAULT |     917.86 us |     0.4368 us |     0.3410 us |
+|   'GoRogue AStar - H,W,T,D,Array' |     250 | RAND ROOMS |    MANHATTAN |   DEFAULT |     464.15 us |     1.9963 us |     1.7697 us |
+|    'GoRogue AStar - H,W,T,D,Hash' |     250 | RAND ROOMS |    MANHATTAN |   DEFAULT |     512.01 us |     0.4375 us |     0.3878 us |
+| 'GoRogue AStar - H,W,T,D,HashInt' |     250 | RAND ROOMS |    MANHATTAN |   DEFAULT |     432.40 us |     0.1343 us |     0.1049 us |
+|                   'GoRogue AStar' |     250 | RAND ROOMS |    MANHATTAN |      FAST |   1,875.18 us |    10.7551 us |     9.5341 us |
+|           'GoRogue AStar - H,W,T' |     250 | RAND ROOMS |    MANHATTAN |      FAST |   1,506.43 us |     0.6492 us |     0.5421 us |
+|         'GoRogue AStar - H,W,T,D' |     250 | RAND ROOMS |    MANHATTAN |      FAST |     919.62 us |     2.9111 us |     2.5806 us |
+|   'GoRogue AStar - H,W,T,D,Array' |     250 | RAND ROOMS |    MANHATTAN |      FAST |     456.88 us |     0.1941 us |     0.1720 us |
+|    'GoRogue AStar - H,W,T,D,Hash' |     250 | RAND ROOMS |    MANHATTAN |      FAST |     508.33 us |     0.7893 us |     0.6591 us |
+| 'GoRogue AStar - H,W,T,D,HashInt' |     250 | RAND ROOMS |    MANHATTAN |      FAST |     432.09 us |     0.7218 us |     0.6399 us |
+|                   'GoRogue AStar' |     250 |  RECTANGLE |    CHEBYSHEV |   DEFAULT |   9,912.20 us |   211.9227 us |   252.2789 us |
+|           'GoRogue AStar - H,W,T' |     250 |  RECTANGLE |    CHEBYSHEV |   DEFAULT |   1,710.02 us |     3.5073 us |     3.2807 us |
+|         'GoRogue AStar - H,W,T,D' |     250 |  RECTANGLE |    CHEBYSHEV |   DEFAULT |   1,123.33 us |     1.5129 us |     1.3412 us |
+|   'GoRogue AStar - H,W,T,D,Array' |     250 |  RECTANGLE |    CHEBYSHEV |   DEFAULT |     656.03 us |     1.2389 us |     1.0982 us |
+|    'GoRogue AStar - H,W,T,D,Hash' |     250 |  RECTANGLE |    CHEBYSHEV |   DEFAULT |     791.52 us |     0.4680 us |     0.4148 us |
+| 'GoRogue AStar - H,W,T,D,HashInt' |     250 |  RECTANGLE |    CHEBYSHEV |   DEFAULT |     650.57 us |     2.4793 us |     2.3191 us |
+|                   'GoRogue AStar' |     250 |  RECTANGLE |    CHEBYSHEV |      FAST |   9,696.05 us |    18.9518 us |    16.8003 us |
+|           'GoRogue AStar - H,W,T' |     250 |  RECTANGLE |    CHEBYSHEV |      FAST |   1,686.95 us |     3.5971 us |     3.1887 us |
+|         'GoRogue AStar - H,W,T,D' |     250 |  RECTANGLE |    CHEBYSHEV |      FAST |   1,096.86 us |     0.2427 us |     0.1895 us |
+|   'GoRogue AStar - H,W,T,D,Array' |     250 |  RECTANGLE |    CHEBYSHEV |      FAST |     627.87 us |     0.2437 us |     0.1902 us |
+|    'GoRogue AStar - H,W,T,D,Hash' |     250 |  RECTANGLE |    CHEBYSHEV |      FAST |     738.10 us |     0.4760 us |     0.3975 us |
+| 'GoRogue AStar - H,W,T,D,HashInt' |     250 |  RECTANGLE |    CHEBYSHEV |      FAST |     618.55 us |     1.1055 us |     0.9231 us |
+|                   'GoRogue AStar' |     250 |  RECTANGLE |    EUCLIDEAN |   DEFAULT |  20,687.91 us |    33.5821 us |    29.7696 us |
+|           'GoRogue AStar - H,W,T' |     250 |  RECTANGLE |    EUCLIDEAN |   DEFAULT |  17,407.08 us |    96.4398 us |    90.2099 us |
+|         'GoRogue AStar - H,W,T,D' |     250 |  RECTANGLE |    EUCLIDEAN |   DEFAULT |  17,441.01 us |    29.6026 us |    26.2419 us |
+|   'GoRogue AStar - H,W,T,D,Array' |     250 |  RECTANGLE |    EUCLIDEAN |   DEFAULT |  16,808.03 us |    45.0702 us |    35.1878 us |
+|    'GoRogue AStar - H,W,T,D,Hash' |     250 |  RECTANGLE |    EUCLIDEAN |   DEFAULT |  27,778.34 us |    67.1064 us |    59.4881 us |
+| 'GoRogue AStar - H,W,T,D,HashInt' |     250 |  RECTANGLE |    EUCLIDEAN |   DEFAULT |  21,205.46 us |   139.2926 us |   130.2944 us |
+|                   'GoRogue AStar' |     250 |  RECTANGLE |    EUCLIDEAN |      FAST |  20,678.53 us |    41.1305 us |    34.3459 us |
+|           'GoRogue AStar - H,W,T' |     250 |  RECTANGLE |    EUCLIDEAN |      FAST |   1,706.94 us |     5.4989 us |     5.1437 us |
+|         'GoRogue AStar - H,W,T,D' |     250 |  RECTANGLE |    EUCLIDEAN |      FAST |   1,088.29 us |     6.1943 us |     5.7942 us |
+|   'GoRogue AStar - H,W,T,D,Array' |     250 |  RECTANGLE |    EUCLIDEAN |      FAST |     615.32 us |     0.1750 us |     0.1551 us |
+|    'GoRogue AStar - H,W,T,D,Hash' |     250 |  RECTANGLE |    EUCLIDEAN |      FAST |     707.88 us |     0.4972 us |     0.4651 us |
+| 'GoRogue AStar - H,W,T,D,HashInt' |     250 |  RECTANGLE |    EUCLIDEAN |      FAST |     595.72 us |     3.4021 us |     3.0159 us |
+|                   'GoRogue AStar' |     250 |  RECTANGLE |    MANHATTAN |   DEFAULT |   9,921.51 us |    21.5535 us |    20.1612 us |
+|           'GoRogue AStar - H,W,T' |     250 |  RECTANGLE |    MANHATTAN |   DEFAULT |   1,636.06 us |     1.3806 us |     1.2914 us |
+|         'GoRogue AStar - H,W,T,D' |     250 |  RECTANGLE |    MANHATTAN |   DEFAULT |   1,049.22 us |     2.1938 us |     1.9448 us |
+|   'GoRogue AStar - H,W,T,D,Array' |     250 |  RECTANGLE |    MANHATTAN |   DEFAULT |     579.62 us |     4.0537 us |     3.7919 us |
+|    'GoRogue AStar - H,W,T,D,Hash' |     250 |  RECTANGLE |    MANHATTAN |   DEFAULT |     686.31 us |     0.8460 us |     0.7499 us |
+| 'GoRogue AStar - H,W,T,D,HashInt' |     250 |  RECTANGLE |    MANHATTAN |   DEFAULT |     565.92 us |     1.8820 us |     1.6684 us |
+|                   'GoRogue AStar' |     250 |  RECTANGLE |    MANHATTAN |      FAST |   9,920.44 us |    20.7672 us |    19.4257 us |
+|           'GoRogue AStar - H,W,T' |     250 |  RECTANGLE |    MANHATTAN |      FAST |   1,627.42 us |     0.6819 us |     0.6045 us |
+|         'GoRogue AStar - H,W,T,D' |     250 |  RECTANGLE |    MANHATTAN |      FAST |   1,056.72 us |     4.1699 us |     3.6965 us |
+|   'GoRogue AStar - H,W,T,D,Array' |     250 |  RECTANGLE |    MANHATTAN |      FAST |     584.85 us |     2.6281 us |     2.3297 us |
+|    'GoRogue AStar - H,W,T,D,Hash' |     250 |  RECTANGLE |    MANHATTAN |      FAST |     680.71 us |     1.2141 us |     1.0762 us |
+| 'GoRogue AStar - H,W,T,D,HashInt' |     250 |  RECTANGLE |    MANHATTAN |      FAST |     568.80 us |     2.6684 us |     2.4961 us |
+|                   'GoRogue AStar' |     500 |  CELL AUTO |    CHEBYSHEV |   DEFAULT |  64,026.68 us |   133.0601 us |   124.4645 us |
+|           'GoRogue AStar - H,W,T' |     500 |  CELL AUTO |    CHEBYSHEV |   DEFAULT |  55,775.44 us |   194.1944 us |   181.6495 us |
+|         'GoRogue AStar - H,W,T,D' |     500 |  CELL AUTO |    CHEBYSHEV |   DEFAULT |  50,857.53 us |    79.2258 us |    74.1078 us |
+|   'GoRogue AStar - H,W,T,D,Array' |     500 |  CELL AUTO |    CHEBYSHEV |   DEFAULT |  47,883.13 us |   376.1966 us |   333.4885 us |
+|    'GoRogue AStar - H,W,T,D,Hash' |     500 |  CELL AUTO |    CHEBYSHEV |   DEFAULT |  74,956.52 us |    80.0080 us |    66.8103 us |
+| 'GoRogue AStar - H,W,T,D,HashInt' |     500 |  CELL AUTO |    CHEBYSHEV |   DEFAULT |  60,331.13 us |   331.7276 us |   310.2982 us |
+|                   'GoRogue AStar' |     500 |  CELL AUTO |    CHEBYSHEV |      FAST |  64,268.27 us |   330.3336 us |   292.8321 us |
+|           'GoRogue AStar - H,W,T' |     500 |  CELL AUTO |    CHEBYSHEV |      FAST |  26,230.65 us |    61.1610 us |    57.2101 us |
+|         'GoRogue AStar - H,W,T,D' |     500 |  CELL AUTO |    CHEBYSHEV |      FAST |  20,203.30 us |    17.5198 us |    14.6298 us |
+|   'GoRogue AStar - H,W,T,D,Array' |     500 |  CELL AUTO |    CHEBYSHEV |      FAST |  18,134.19 us |    71.2142 us |    63.1295 us |
+|    'GoRogue AStar - H,W,T,D,Hash' |     500 |  CELL AUTO |    CHEBYSHEV |      FAST |  27,912.40 us |    97.1868 us |    86.1535 us |
+| 'GoRogue AStar - H,W,T,D,HashInt' |     500 |  CELL AUTO |    CHEBYSHEV |      FAST |  23,378.31 us |    19.3633 us |    17.1651 us |
+|                   'GoRogue AStar' |     500 |  CELL AUTO |    EUCLIDEAN |   DEFAULT |  74,339.41 us |   251.0957 us |   234.8751 us |
+|           'GoRogue AStar - H,W,T' |     500 |  CELL AUTO |    EUCLIDEAN |   DEFAULT |  63,681.55 us |   290.5242 us |   271.7565 us |
+|         'GoRogue AStar - H,W,T,D' |     500 |  CELL AUTO |    EUCLIDEAN |   DEFAULT |  60,701.51 us |   151.0883 us |   133.9359 us |
+|   'GoRogue AStar - H,W,T,D,Array' |     500 |  CELL AUTO |    EUCLIDEAN |   DEFAULT |  56,459.18 us |   218.8847 us |   194.0356 us |
+|    'GoRogue AStar - H,W,T,D,Hash' |     500 |  CELL AUTO |    EUCLIDEAN |   DEFAULT |  90,549.67 us |   652.5276 us |   610.3747 us |
+| 'GoRogue AStar - H,W,T,D,HashInt' |     500 |  CELL AUTO |    EUCLIDEAN |   DEFAULT |  70,301.35 us |    99.9318 us |    88.5869 us |
+|                   'GoRogue AStar' |     500 |  CELL AUTO |    EUCLIDEAN |      FAST |  74,027.94 us |   140.9713 us |   117.7174 us |
+|           'GoRogue AStar - H,W,T' |     500 |  CELL AUTO |    EUCLIDEAN |      FAST |  34,330.41 us |   104.9250 us |    81.9186 us |
+|         'GoRogue AStar - H,W,T,D' |     500 |  CELL AUTO |    EUCLIDEAN |      FAST |  28,554.51 us |   170.2183 us |   159.2223 us |
+|   'GoRogue AStar - H,W,T,D,Array' |     500 |  CELL AUTO |    EUCLIDEAN |      FAST |  26,962.71 us |   278.8807 us |   260.8651 us |
+|    'GoRogue AStar - H,W,T,D,Hash' |     500 |  CELL AUTO |    EUCLIDEAN |      FAST |  39,896.11 us |    61.5551 us |    48.0582 us |
+| 'GoRogue AStar - H,W,T,D,HashInt' |     500 |  CELL AUTO |    EUCLIDEAN |      FAST |  32,490.03 us |   114.7544 us |    95.8251 us |
+|                   'GoRogue AStar' |     500 |  CELL AUTO |    MANHATTAN |   DEFAULT |  43,366.14 us |   148.8019 us |   139.1894 us |
+|           'GoRogue AStar - H,W,T' |     500 |  CELL AUTO |    MANHATTAN |   DEFAULT |  37,470.09 us |   146.1468 us |   136.7058 us |
+|         'GoRogue AStar - H,W,T,D' |     500 |  CELL AUTO |    MANHATTAN |   DEFAULT |  31,908.24 us |    83.4798 us |    74.0026 us |
+|   'GoRogue AStar - H,W,T,D,Array' |     500 |  CELL AUTO |    MANHATTAN |   DEFAULT |  29,347.61 us |   110.2449 us |   103.1232 us |
+|    'GoRogue AStar - H,W,T,D,Hash' |     500 |  CELL AUTO |    MANHATTAN |   DEFAULT |  44,298.70 us |    90.7520 us |    84.8895 us |
+| 'GoRogue AStar - H,W,T,D,HashInt' |     500 |  CELL AUTO |    MANHATTAN |   DEFAULT |  35,757.05 us |   154.2074 us |   128.7702 us |
+|                   'GoRogue AStar' |     500 |  CELL AUTO |    MANHATTAN |      FAST |  43,432.08 us |   226.9566 us |   212.2954 us |
+|           'GoRogue AStar - H,W,T' |     500 |  CELL AUTO |    MANHATTAN |      FAST |  37,832.98 us |   184.6685 us |   172.7390 us |
+|         'GoRogue AStar - H,W,T,D' |     500 |  CELL AUTO |    MANHATTAN |      FAST |  31,713.25 us |    55.5535 us |    51.9648 us |
+|   'GoRogue AStar - H,W,T,D,Array' |     500 |  CELL AUTO |    MANHATTAN |      FAST |  29,045.58 us |    50.3677 us |    42.0593 us |
+|    'GoRogue AStar - H,W,T,D,Hash' |     500 |  CELL AUTO |    MANHATTAN |      FAST |  44,483.26 us |   118.7310 us |   111.0610 us |
+| 'GoRogue AStar - H,W,T,D,HashInt' |     500 |  CELL AUTO |    MANHATTAN |      FAST |  35,526.99 us |   189.3737 us |   177.1403 us |
+|                   'GoRogue AStar' |     500 | RAND ROOMS |    CHEBYSHEV |   DEFAULT |  40,647.14 us |   128.7863 us |   120.4668 us |
+|           'GoRogue AStar - H,W,T' |     500 | RAND ROOMS |    CHEBYSHEV |   DEFAULT |  33,926.02 us |   161.3842 us |   150.9589 us |
+|         'GoRogue AStar - H,W,T,D' |     500 | RAND ROOMS |    CHEBYSHEV |   DEFAULT |  26,938.07 us |    21.8003 us |    18.2043 us |
+|   'GoRogue AStar - H,W,T,D,Array' |     500 | RAND ROOMS |    CHEBYSHEV |   DEFAULT |  25,400.91 us |    57.1760 us |    50.6850 us |
+|    'GoRogue AStar - H,W,T,D,Hash' |     500 | RAND ROOMS |    CHEBYSHEV |   DEFAULT |  33,850.79 us |   151.0867 us |   141.3266 us |
+| 'GoRogue AStar - H,W,T,D,HashInt' |     500 | RAND ROOMS |    CHEBYSHEV |   DEFAULT |  29,113.70 us |    31.7249 us |    24.7687 us |
+|                   'GoRogue AStar' |     500 | RAND ROOMS |    CHEBYSHEV |      FAST |  40,529.69 us |   127.7858 us |   113.2788 us |
+|           'GoRogue AStar - H,W,T' |     500 | RAND ROOMS |    CHEBYSHEV |      FAST |   9,231.58 us |    20.1762 us |    15.7522 us |
+|         'GoRogue AStar - H,W,T,D' |     500 | RAND ROOMS |    CHEBYSHEV |      FAST |   3,631.51 us |    22.3345 us |    19.7990 us |
+|   'GoRogue AStar - H,W,T,D,Array' |     500 | RAND ROOMS |    CHEBYSHEV |      FAST |   1,894.46 us |     8.7731 us |     8.2064 us |
+|    'GoRogue AStar - H,W,T,D,Hash' |     500 | RAND ROOMS |    CHEBYSHEV |      FAST |   1,932.66 us |     3.6022 us |     2.8123 us |
+| 'GoRogue AStar - H,W,T,D,HashInt' |     500 | RAND ROOMS |    CHEBYSHEV |      FAST |   1,706.71 us |     4.4575 us |     4.1695 us |
+|                   'GoRogue AStar' |     500 | RAND ROOMS |    EUCLIDEAN |   DEFAULT |  40,046.15 us |   166.1045 us |   155.3742 us |
+|           'GoRogue AStar - H,W,T' |     500 | RAND ROOMS |    EUCLIDEAN |   DEFAULT |  32,991.19 us |   343.3467 us |   321.1667 us |
+|         'GoRogue AStar - H,W,T,D' |     500 | RAND ROOMS |    EUCLIDEAN |   DEFAULT |  26,208.97 us |    16.5510 us |    14.6721 us |
+|   'GoRogue AStar - H,W,T,D,Array' |     500 | RAND ROOMS |    EUCLIDEAN |   DEFAULT |  24,320.40 us |    78.0976 us |    69.2315 us |
+|    'GoRogue AStar - H,W,T,D,Hash' |     500 | RAND ROOMS |    EUCLIDEAN |   DEFAULT |  32,642.25 us |   101.3483 us |    94.8013 us |
+| 'GoRogue AStar - H,W,T,D,HashInt' |     500 | RAND ROOMS |    EUCLIDEAN |   DEFAULT |  28,508.98 us |    31.0075 us |    29.0045 us |
+|                   'GoRogue AStar' |     500 | RAND ROOMS |    EUCLIDEAN |      FAST |  40,043.65 us |    99.6308 us |    93.1947 us |
+|           'GoRogue AStar - H,W,T' |     500 | RAND ROOMS |    EUCLIDEAN |      FAST |   9,396.28 us |    55.0858 us |    51.5273 us |
+|         'GoRogue AStar - H,W,T,D' |     500 | RAND ROOMS |    EUCLIDEAN |      FAST |   3,572.12 us |     3.2529 us |     2.7163 us |
+|   'GoRogue AStar - H,W,T,D,Array' |     500 | RAND ROOMS |    EUCLIDEAN |      FAST |   1,873.52 us |     3.0367 us |     2.3708 us |
+|    'GoRogue AStar - H,W,T,D,Hash' |     500 | RAND ROOMS |    EUCLIDEAN |      FAST |   1,898.36 us |     1.1696 us |     1.0941 us |
+| 'GoRogue AStar - H,W,T,D,HashInt' |     500 | RAND ROOMS |    EUCLIDEAN |      FAST |   1,667.61 us |     3.0422 us |     2.5404 us |
+|                   'GoRogue AStar' |     500 | RAND ROOMS |    MANHATTAN |   DEFAULT |  13,035.33 us |    41.4727 us |    38.7936 us |
+|           'GoRogue AStar - H,W,T' |     500 | RAND ROOMS |    MANHATTAN |   DEFAULT |   9,692.80 us |    21.1939 us |    18.7879 us |
+|         'GoRogue AStar - H,W,T,D' |     500 | RAND ROOMS |    MANHATTAN |   DEFAULT |   3,922.77 us |     2.5267 us |     2.2399 us |
+|   'GoRogue AStar - H,W,T,D,Array' |     500 | RAND ROOMS |    MANHATTAN |   DEFAULT |   2,207.86 us |     1.6220 us |     1.2663 us |
+|    'GoRogue AStar - H,W,T,D,Hash' |     500 | RAND ROOMS |    MANHATTAN |   DEFAULT |   2,566.94 us |     9.5917 us |     8.9720 us |
+| 'GoRogue AStar - H,W,T,D,HashInt' |     500 | RAND ROOMS |    MANHATTAN |   DEFAULT |   2,197.68 us |    11.0850 us |    10.3689 us |
+|                   'GoRogue AStar' |     500 | RAND ROOMS |    MANHATTAN |      FAST |  12,746.11 us |    35.5432 us |    33.2471 us |
+|           'GoRogue AStar - H,W,T' |     500 | RAND ROOMS |    MANHATTAN |      FAST |   9,707.62 us |   121.3933 us |   107.6120 us |
+|         'GoRogue AStar - H,W,T,D' |     500 | RAND ROOMS |    MANHATTAN |      FAST |   3,946.02 us |    20.3721 us |    19.0561 us |
+|   'GoRogue AStar - H,W,T,D,Array' |     500 | RAND ROOMS |    MANHATTAN |      FAST |   2,209.94 us |     2.6202 us |     2.0457 us |
+|    'GoRogue AStar - H,W,T,D,Hash' |     500 | RAND ROOMS |    MANHATTAN |      FAST |   2,562.33 us |     2.2928 us |     1.9146 us |
+| 'GoRogue AStar - H,W,T,D,HashInt' |     500 | RAND ROOMS |    MANHATTAN |      FAST |   2,194.05 us |    13.9562 us |    13.0546 us |
+|                   'GoRogue AStar' |     500 |  RECTANGLE |    CHEBYSHEV |   DEFAULT |  19,045.95 us |    59.7082 us |    55.8510 us |
+|           'GoRogue AStar - H,W,T' |     500 |  RECTANGLE |    CHEBYSHEV |   DEFAULT |  10,323.89 us |    41.8700 us |    39.1652 us |
+|         'GoRogue AStar - H,W,T,D' |     500 |  RECTANGLE |    CHEBYSHEV |   DEFAULT |   4,821.19 us |     3.2429 us |     2.5319 us |
+|   'GoRogue AStar - H,W,T,D,Array' |     500 |  RECTANGLE |    CHEBYSHEV |   DEFAULT |   2,963.91 us |     7.7531 us |     7.2523 us |
+|    'GoRogue AStar - H,W,T,D,Hash' |     500 |  RECTANGLE |    CHEBYSHEV |   DEFAULT |   3,828.25 us |     6.1282 us |     5.1173 us |
+| 'GoRogue AStar - H,W,T,D,HashInt' |     500 |  RECTANGLE |    CHEBYSHEV |   DEFAULT |   3,176.39 us |     7.1091 us |     6.6499 us |
+|                   'GoRogue AStar' |     500 |  RECTANGLE |    CHEBYSHEV |      FAST |  18,992.34 us |    45.0680 us |    42.1566 us |
+|           'GoRogue AStar - H,W,T' |     500 |  RECTANGLE |    CHEBYSHEV |      FAST |   8,941.85 us |    64.1830 us |    60.0368 us |
+|         'GoRogue AStar - H,W,T,D' |     500 |  RECTANGLE |    CHEBYSHEV |      FAST |   3,291.46 us |    21.0114 us |    17.5455 us |
+|   'GoRogue AStar - H,W,T,D,Array' |     500 |  RECTANGLE |    CHEBYSHEV |      FAST |   1,484.32 us |     0.9688 us |     0.7563 us |
+|    'GoRogue AStar - H,W,T,D,Hash' |     500 |  RECTANGLE |    CHEBYSHEV |      FAST |   1,547.26 us |     2.2037 us |     2.0613 us |
+| 'GoRogue AStar - H,W,T,D,HashInt' |     500 |  RECTANGLE |    CHEBYSHEV |      FAST |   1,256.38 us |     4.5148 us |     4.0022 us |
+|                   'GoRogue AStar' |     500 |  RECTANGLE |    EUCLIDEAN |   DEFAULT |  92,966.28 us |   449.9000 us |   420.8367 us |
+|           'GoRogue AStar - H,W,T' |     500 |  RECTANGLE |    EUCLIDEAN |   DEFAULT |  79,456.10 us |   123.2174 us |   109.2291 us |
+|         'GoRogue AStar - H,W,T,D' |     500 |  RECTANGLE |    EUCLIDEAN |   DEFAULT |  75,751.26 us |   289.1581 us |   270.4787 us |
+|   'GoRogue AStar - H,W,T,D,Array' |     500 |  RECTANGLE |    EUCLIDEAN |   DEFAULT |  72,162.79 us |   121.0336 us |   107.2931 us |
+|    'GoRogue AStar - H,W,T,D,Hash' |     500 |  RECTANGLE |    EUCLIDEAN |   DEFAULT | 121,617.60 us |   688.7626 us |   644.2689 us |
+| 'GoRogue AStar - H,W,T,D,HashInt' |     500 |  RECTANGLE |    EUCLIDEAN |   DEFAULT |  89,406.76 us | 1,075.9756 us | 1,006.4683 us |
+|                   'GoRogue AStar' |     500 |  RECTANGLE |    EUCLIDEAN |      FAST |  94,083.74 us |   628.6324 us |   588.0232 us |
+|           'GoRogue AStar - H,W,T' |     500 |  RECTANGLE |    EUCLIDEAN |      FAST |   8,728.28 us |    56.8575 us |    47.4786 us |
+|         'GoRogue AStar - H,W,T,D' |     500 |  RECTANGLE |    EUCLIDEAN |      FAST |   3,235.33 us |     4.7201 us |     4.4152 us |
+|   'GoRogue AStar - H,W,T,D,Array' |     500 |  RECTANGLE |    EUCLIDEAN |      FAST |   1,470.40 us |     4.5528 us |     4.2587 us |
+|    'GoRogue AStar - H,W,T,D,Hash' |     500 |  RECTANGLE |    EUCLIDEAN |      FAST |   1,491.82 us |     1.4772 us |     1.3817 us |
+| 'GoRogue AStar - H,W,T,D,HashInt' |     500 |  RECTANGLE |    EUCLIDEAN |      FAST |   1,209.29 us |     2.9002 us |     2.7129 us |
+|                   'GoRogue AStar' |     500 |  RECTANGLE |    MANHATTAN |   DEFAULT |  33,894.75 us |    79.6401 us |    70.5989 us |
+|           'GoRogue AStar - H,W,T' |     500 |  RECTANGLE |    MANHATTAN |   DEFAULT |   9,842.25 us |    58.4986 us |    51.8575 us |
+|         'GoRogue AStar - H,W,T,D' |     500 |  RECTANGLE |    MANHATTAN |   DEFAULT |   4,418.01 us |     8.2750 us |     7.3356 us |
+|   'GoRogue AStar - H,W,T,D,Array' |     500 |  RECTANGLE |    MANHATTAN |   DEFAULT |   2,513.11 us |     7.4109 us |     6.9321 us |
+|    'GoRogue AStar - H,W,T,D,Hash' |     500 |  RECTANGLE |    MANHATTAN |   DEFAULT |   3,076.29 us |     8.2394 us |     7.7071 us |
+| 'GoRogue AStar - H,W,T,D,HashInt' |     500 |  RECTANGLE |    MANHATTAN |   DEFAULT |   2,560.55 us |    16.3806 us |    15.3224 us |
+|                   'GoRogue AStar' |     500 |  RECTANGLE |    MANHATTAN |      FAST |  34,124.36 us |   174.0838 us |   162.8381 us |
+|           'GoRogue AStar - H,W,T' |     500 |  RECTANGLE |    MANHATTAN |      FAST |   9,969.93 us |    41.9957 us |    39.2828 us |
+|         'GoRogue AStar - H,W,T,D' |     500 |  RECTANGLE |    MANHATTAN |      FAST |   4,417.69 us |     9.5682 us |     8.4819 us |
+|   'GoRogue AStar - H,W,T,D,Array' |     500 |  RECTANGLE |    MANHATTAN |      FAST |   2,508.10 us |    10.1844 us |     9.5265 us |
+|    'GoRogue AStar - H,W,T,D,Hash' |     500 |  RECTANGLE |    MANHATTAN |      FAST |   3,070.49 us |     4.6035 us |     4.3061 us |
+| 'GoRogue AStar - H,W,T,D,HashInt' |     500 |  RECTANGLE |    MANHATTAN |      FAST |   2,557.83 us |    10.5235 us |     9.8437 us |

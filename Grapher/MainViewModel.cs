@@ -30,7 +30,7 @@ namespace Grapher
 
 	public class MainViewModel
 	{
-		public static readonly string INPUT_FILE = "results_parsable.log";
+		public static readonly string INPUT_FILE = "results_parsable.txt";
 		public PlotModel MyModel { get; private set; }
 		public MainViewModel()
 		{
